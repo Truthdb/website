@@ -9,6 +9,8 @@ on:
 
 jobs:
     build-test-publish:
+        permissions:
+          contents: read
         uses: ./.github/workflows/build-test-website.yml
         with:
           publish_artifact: true
