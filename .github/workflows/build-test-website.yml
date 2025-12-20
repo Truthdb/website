@@ -18,13 +18,13 @@ jobs:
 
     steps:
       - name: Cleanup
-        uses: FraBle/clean-after-action@b4cc12128d2ad0fd0feb639ef8c48c97f5b75dbb
+        uses: FraBle/clean-after-action@v1.0.0
 
       - name: Checkout code
-        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5
+        uses: actions/checkout@v4
 
       - name: Setup Node.js
-        uses: actions/setup-node@49933ea5288caeca8642d0c1c4e9cf6c1ab0399a
+        uses: actions/setup-node@v4
         with:
           node-version: '20'
           cache: 'npm'
@@ -40,7 +40,7 @@ jobs:
 
       - name: Upload build artifact
         if: ${{ inputs.publish_artifact }}
-        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        uses: actions/upload-artifact@v4
         with:
           name: website-dist
           path: dist
