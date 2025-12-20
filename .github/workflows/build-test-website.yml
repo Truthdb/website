@@ -1,0 +1,46 @@
+name: Build and test website
+
+on:
+  workflow_call:
+    inputs:
+      publish_artifact:
+        description: 'Whether to publish the build artifact'
+        required: false
+        type: boolean
+        default: false
+
+jobs:
+  build-test-publish:
+    runs-on: ubuntu-24.04
+
+    permissions:
+      contents: read
+
+    steps:
+      - name: Cleanup
+        uses: FraBle/clean-after-action@v1
+
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Lint code
+        run: npm run lint
+
+      - name: Build website
+        run: npm run build
+
+      - name: Upload build artifact
+        if: ${{ inputs.publish_artifact }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: website-dist
+          path: dist
