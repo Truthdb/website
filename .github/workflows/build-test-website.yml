@@ -18,7 +18,7 @@ jobs:
 
     steps:
       - name: Cleanup
-        uses: FraBle/clean-after-action@v1.0.0
+        uses: FraBle/clean-after-action@v1
 
       - name: Checkout code
         uses: actions/checkout@v4
