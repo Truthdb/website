@@ -11,4 +11,4 @@ permissions:
 
 jobs:
   ci:
-    uses: Truthdb/.github/.github/workflows/node-ci.yml@issue-17-workflows
+    uses: Truthdb/.github/.github/workflows/node-ci.yml@workflows-v1
