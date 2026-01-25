@@ -13,7 +13,6 @@ jobs:
     name: Create Release
     runs-on: ubuntu-latest
     outputs:
-      upload_url: ${{ steps.create_release.outputs.upload_url }}
       version: ${{ steps.get_version.outputs.version }}
       tag: ${{ steps.get_tag.outputs.tag }}
     steps:
@@ -29,46 +28,31 @@ jobs:
         id: get_version
         run: echo "version=${GITHUB_REF#refs/tags/v}" >> $GITHUB_OUTPUT
 
-      - name: Generate release notes
-        id: release_notes
+      - name: Create GitHub Release (generate notes, mark latest)
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         shell: bash
         run: |
           set -euo pipefail
-          PREV_TAG=$(git describe --abbrev=0 --tags $(git rev-list --tags --skip=1 --max-count=1) 2>/dev/null || echo "")
+          TAG="${{ steps.get_tag.outputs.tag }}"
+          VERSION="${{ steps.get_version.outputs.version }}"
+          NOTES_FILE="${RUNNER_TEMP}/release-notes-${TAG}.md"
+          gh api -X POST "repos/${GITHUB_REPOSITORY}/releases/generate-notes" \
+            -f tag_name="$TAG" \
+            -f target_commitish="${GITHUB_SHA}" \
+            --jq .body > "$NOTES_FILE"
 
-          if [ -z "$PREV_TAG" ]; then
-            CHANGELOG="Initial release"
+          if gh release view "$TAG" >/dev/null 2>&1; then
+            gh release edit "$TAG" \
+              --title "Release ${VERSION}" \
+              --notes-file "$NOTES_FILE" \
+              --latest
           else
-            CHANGELOG=$(git log ${PREV_TAG}..HEAD --pretty=format:"- %s" --no-merges)
+            gh release create "$TAG" \
+              --title "Release ${VERSION}" \
+              --notes-file "$NOTES_FILE" \
+              --latest
           fi
-
-          cat > release_notes.md << EOF
-          ## website ${GITHUB_REF#refs/tags/v}
-
-          ### Changes
-          $CHANGELOG
-
-          ### Assets
-
-          - website-v${GITHUB_REF#refs/tags/v}.tar.gz
-          - website-v${GITHUB_REF#refs/tags/v}.sha256
-          EOF
-
-          echo "notes<<EOF" >> $GITHUB_OUTPUT
-          cat release_notes.md >> $GITHUB_OUTPUT
-          echo "EOF" >> $GITHUB_OUTPUT
-
-      - name: Create Release
-        id: create_release
-        uses: actions/create-release@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          tag_name: ${{ steps.get_tag.outputs.tag }}
-          release_name: Release ${{ steps.get_version.outputs.version }}
-          body: ${{ steps.release_notes.outputs.notes }}
-          draft: false
-          prerelease: false
 
   build:
     name: Build
@@ -115,22 +99,16 @@ jobs:
           name: release-assets
           path: dist-release
 
-      - name: Upload Release Asset - Website Tarball
-        uses: actions/upload-release-asset@v1
+      - name: Upload release assets
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          upload_url: ${{ needs.create-release.outputs.upload_url }}
-          asset_path: ./dist-release/website-v${{ needs.create-release.outputs.version }}.tar.gz
-          asset_name: website-v${{ needs.create-release.outputs.version }}.tar.gz
-          asset_content_type: application/gzip
-
-      - name: Upload Release Asset - SHA256
-        uses: actions/upload-release-asset@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          upload_url: ${{ needs.create-release.outputs.upload_url }}
-          asset_path: ./dist-release/website-v${{ needs.create-release.outputs.version }}.sha256
-          asset_name: website-v${{ needs.create-release.outputs.version }}.sha256
-          asset_content_type: text/plain
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          shopt -s nullglob
+          files=(./dist-release/*)
+          if (( ${#files[@]} == 0 )); then
+            echo "No release assets found; skipping upload."
+            exit 0
+          fi
+          gh release upload "${{ needs.create-release.outputs.tag }}" "${files[@]}" --clobber
