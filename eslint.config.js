@@ -14,4 +14,13 @@ export default [
 
   ...pluginVue.configs['flat/essential'],
   ...vueTsEslintConfig(),
+
+  {
+    name: 'app/rules',
+    rules: {
+      // Page sections are intentionally named after the section they render
+      // (Hero, Pillars, Footer, …); single-word names are fine here.
+      'vue/multi-word-component-names': 'off',
+    },
+  },
 ]

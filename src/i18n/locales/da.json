@@ -1,0 +1,193 @@
+{
+  "meta": {
+    "title": "TruthDB — Én log. Én sandhed.",
+    "description": "TruthDB er ét system, der lagrer, søger i og beskytter dine vigtigste data — og fører én permanent registrering, som alt andet bygges ud fra."
+  },
+  "nav": {
+    "whatItIs": "Hvad det er",
+    "capabilities": "Funktioner",
+    "whyDifferent": "Hvorfor det er anderledes",
+    "install": "Installér",
+    "download": "Download"
+  },
+  "lang": {
+    "en": "English",
+    "da": "Dansk",
+    "fr": "Français",
+    "es": "Español"
+  },
+  "hero": {
+    "eyebrow": "Systemet, der er kilden til sandheden",
+    "headlineLine1": "Én log.",
+    "headlineLine2": "Én sandhed.",
+    "ledePre": "TruthDB er ét system, der lagrer, søger i og beskytter dine vigtigste data — og fører én permanent registrering, som alt andet bygges ud fra. ",
+    "ledeEmphasis": "Hvis det står i TruthDB, er det sandt.",
+    "ctaDownload": "Download TruthDB",
+    "ctaHow": "Se hvordan det virker →",
+    "chip": "Klar til produktion",
+    "measure": "Ét system · ingen datafragmentering",
+    "specLabel": "Fig.01 — TruthDB",
+    "specVersion": "v1.0",
+    "annNewest": "nyeste post",
+    "annHistory": "én ordnet historik",
+    "statSpeed": "Hastighed",
+    "statVerified": "Verificeret",
+    "statDataLost": "Tabt data"
+  },
+  "oneSystem": {
+    "eyebrow": "Hele stakken, samlet i ét",
+    "heading": "Erstat fem systemer med ét.",
+    "lede": "De fleste teams skruer en database, en søgemaskine, en anbefalingsmotor, en aktivitetslog og et revisionsspor sammen. Hver enkelt er endnu en kopi af dine data, der kan glide fra hinanden, gå i stykker eller være uenige. TruthDB klarer det hele fra én kilde — så dine data bor ét sted og altid stemmer overens med sig selv.",
+    "todayLabel": "I dag — fem bevægelige dele",
+    "boxes": {
+      "database": "Database",
+      "search": "Søgemaskine",
+      "vector": "Vektor / AI-lager",
+      "activity": "Aktivitetslog",
+      "audit": "Revisionsspor"
+    },
+    "copy": "kopi {n}",
+    "beforeMeasure": "5 kopier · 5 ting der kan gå i stykker · konstant afvigelse",
+    "consolidate": "konsolidér",
+    "afterTitle": "Én kilde til sandheden.",
+    "afterBody": "Én kopi af dine data, der udfører alle opgaver på én gang — altid konsistent, intet at holde synkroniseret.",
+    "afterMeasure": "1 system · 1 kopi · altid i overensstemmelse"
+  },
+  "capabilities": {
+    "eyebrow": "Funktioner",
+    "headingLine1": "Fire opgaver.",
+    "headingLine2": "Ét fundament.",
+    "intro": "Hver funktion er et fuldt lodret snit — bygget direkte ind i kernen, ikke skruet på bagefter. Brug én, eller brug dem sammen i én forespørgsel.",
+    "items": {
+      "records": {
+        "title": "Poster & transaktioner",
+        "body": "Gem og opdatér strukturerede data med garantier, du kan stole på — ingen halvfærdige skrivninger, ingen overraskelser."
+      },
+      "search": {
+        "title": "Øjeblikkelig søgning",
+        "body": "Find alt i dine data i samme øjeblik, de lander. Fritekstsøgning er altid opdateret."
+      },
+      "ai": {
+        "title": "AI & anbefalinger",
+        "body": "Søg efter betydning, driv anbefalinger og forankr AI-assistenter — uden en separat vektordatabase."
+      },
+      "history": {
+        "title": "Komplet historik",
+        "body": "Hver ændring gemmes i rækkefølge, så du kan revidere, afspille igen eller spole tilbage til ethvert øjeblik."
+      }
+    },
+    "baseLabel": "Én kilde til sandheden",
+    "baseMeasure": "én permanent registrering · alt udledes af den"
+  },
+  "pillars": {
+    "eyebrow": "Bygget til det, der betyder noget",
+    "heading": "Hurtig. Forseglet. Ukorrumperbar.",
+    "lede": "Tre løfter, vi konstruerer efter først — for et system, der er kilden til sandheden, er det de eneste, der tæller.",
+    "items": {
+      "performance": {
+        "no": "01 / Ydeevne",
+        "title": "Hurtig — og bliver ved med at være det.",
+        "body": "TruthDB kører tæt på metallet på den hardware, du vælger, og håndterer hundredtusinder af operationer i sekundet — og det sløves ikke, efterhånden som dine data vokser.",
+        "stat": "↳ 180.000+ operationer / sekund"
+      },
+      "security": {
+        "no": "02 / Sikkerhed",
+        "title": "Forseglet og selvstændig.",
+        "body": "Den leveres som et hærdet apparat, der kører på din egen infrastruktur. Dine data forlader aldrig din kontrol, og der er ingen vildtvoksende løst forbundne tjenester at sikre.",
+        "stat": "↳ Kører helt på din egen hardware"
+      },
+      "integrity": {
+        "no": "03 / Integritet",
+        "title": "Intet slipper igennem.",
+        "body": "Hver post kontrolleres i det øjeblik, den skrives, og verificeres igen, hver gang den læses. Data kan ikke i det skjulte gå tabt, blive beskadiget eller ændret bag din ryg.",
+        "stat": "↳ Verificeret hele vejen, ved hver læsning"
+      }
+    },
+    "underHood": "Under motorhjelmen, for ingeniørerne",
+    "chips": [
+      "Én Rust-binær",
+      "Ingen eksterne afhængigheder",
+      "Direkte, sekventiel disk-I/O",
+      "Deterministisk genafspilning",
+      "Tjeksum hele vejen",
+      "Linux · bare metal"
+    ]
+  },
+  "install": {
+    "eyebrow": "Levering",
+    "headingLine1": "Installér én gang.",
+    "headingLine2": "Den kører sig selv.",
+    "intro": "TruthDB kommer som et komplet system — operativsystem inkluderet. Der er intet at samle og ingen afhængigheder at jage.",
+    "steps": {
+      "boot": {
+        "no": "TRIN 01",
+        "title": "Start installeren",
+        "body": "Start fra TruthDB-imaget på en frisk maskine. Den medbringer alt, hvad den har brug for."
+      },
+      "disks": {
+        "no": "TRIN 02",
+        "title": "Vælg dine diske",
+        "body": "Peg den mod dit lager og bekræft. Den klarer resten — sikkert, med en tydelig advarsel, før noget røres."
+      },
+      "live": {
+        "no": "TRIN 03",
+        "title": "Du er live",
+        "body": "Den genstarter til et kørende system, der starter sig selv og forbliver oppe. Ingen pasning nødvendig."
+      }
+    }
+  },
+  "closing": {
+    "eyebrow": "Systemet, der er kilden til sandheden",
+    "heading": "Én log. Én sandhed.",
+    "lede": "Én permanent registrering. Hver opgave, den udfører, udledes af den. Begynd at køre din egen på få minutter.",
+    "ctaDownload": "Download TruthDB",
+    "ctaContact": "Tal med os"
+  },
+  "footer": {
+    "tagline": "Én log. Én sandhed. Systemet, der er kilden til sandheden for data, du ikke har råd til at miste.",
+    "productHeading": "Produkt",
+    "resourcesHeading": "Ressourcer",
+    "companyHeading": "Virksomhed",
+    "links": {
+      "whatItIs": "Hvad det er",
+      "capabilities": "Funktioner",
+      "whyDifferent": "Hvorfor det er anderledes",
+      "install": "Installér",
+      "documentation": "Dokumentation",
+      "architecture": "Arkitektur",
+      "changelog": "Ændringslog",
+      "github": "GitHub",
+      "about": "Om os",
+      "security": "Sikkerhed",
+      "contact": "Kontakt"
+    },
+    "copyright": "© 2026 TruthDB · Én log. Én sandhed.",
+    "builtOn": "Bygget på Linux · Bare metal"
+  },
+  "comingSoon": {
+    "title": "TruthDB — Kommer snart",
+    "headline": "Kommer snart.",
+    "subtitle": "TruthDB er endnu ikke åben for offentligheden. Hvis du har preview-adgang, så log ind og tag et kig.",
+    "previewLink": "Preview-login →"
+  },
+  "auth": {
+    "title": "Log ind",
+    "google": "Fortsæt med Google",
+    "or": "eller",
+    "email": "E-mail",
+    "password": "Adgangskode",
+    "signIn": "Log ind",
+    "close": "Luk",
+    "unavailable": "Login er ikke tilgængeligt lige nu.",
+    "errorGoogle": "Google-login mislykkedes. Prøv igen.",
+    "errorEmail": "Forkert e-mail eller adgangskode.",
+    "errorProviderDisabled": "E-mail-login er ikke aktiveret for dette projekt. Aktivér Email/Password i Firebase-konsollen.",
+    "errorNoAccount": "Ingen konto fundet for denne e-mail.",
+    "errorTooMany": "For mange forsøg. Vent et øjeblik og prøv igen."
+  },
+  "cookies": {
+    "message": "Vi bruger Google Analytics til at forstå, hvordan besøgende bruger dette websted.",
+    "accept": "Acceptér",
+    "reject": "Afvis"
+  }
+}

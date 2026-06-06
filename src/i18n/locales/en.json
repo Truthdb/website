@@ -1,0 +1,193 @@
+{
+  "meta": {
+    "title": "TruthDB — One log. One truth.",
+    "description": "TruthDB is one system that stores, searches and protects your most important data — keeping a single permanent record that everything else is built from."
+  },
+  "nav": {
+    "whatItIs": "What it is",
+    "capabilities": "Capabilities",
+    "whyDifferent": "Why it's different",
+    "install": "Install",
+    "download": "Download"
+  },
+  "lang": {
+    "en": "English",
+    "da": "Dansk",
+    "fr": "Français",
+    "es": "Español"
+  },
+  "hero": {
+    "eyebrow": "The system of record",
+    "headlineLine1": "One log.",
+    "headlineLine2": "One truth.",
+    "ledePre": "TruthDB is one system that stores, searches and protects your most important data — keeping a single permanent record that everything else is built from. ",
+    "ledeEmphasis": "If it's in TruthDB, it's true.",
+    "ctaDownload": "Download TruthDB",
+    "ctaHow": "See how it works →",
+    "chip": "Production ready",
+    "measure": "One system · zero data sprawl",
+    "specLabel": "Fig.01 — TruthDB",
+    "specVersion": "v1.0",
+    "annNewest": "newest record",
+    "annHistory": "one ordered history",
+    "statSpeed": "Speed",
+    "statVerified": "Verified",
+    "statDataLost": "Data lost"
+  },
+  "oneSystem": {
+    "eyebrow": "The whole stack, in one",
+    "heading": "Replace five systems with one.",
+    "lede": "Most teams bolt together a database, a search engine, a recommendation engine, an activity log and an audit trail. Every one is another copy of your data that can drift, break or disagree. TruthDB does all of it from a single source — so your data lives in one place, and it's always in agreement with itself.",
+    "todayLabel": "Today — five moving parts",
+    "boxes": {
+      "database": "Database",
+      "search": "Search engine",
+      "vector": "Vector / AI store",
+      "activity": "Activity log",
+      "audit": "Audit trail"
+    },
+    "copy": "copy {n}",
+    "beforeMeasure": "5 copies · 5 things to break · constant drift",
+    "consolidate": "consolidate",
+    "afterTitle": "One source of truth.",
+    "afterBody": "One copy of your data, doing every job at once — always consistent, nothing to keep in sync.",
+    "afterMeasure": "1 system · 1 copy · always in agreement"
+  },
+  "capabilities": {
+    "eyebrow": "Capabilities",
+    "headingLine1": "Four jobs.",
+    "headingLine2": "One foundation.",
+    "intro": "Each capability is a full vertical slice — built straight into the core, not bolted on as an afterthought. Use one, or use them together in a single request.",
+    "items": {
+      "records": {
+        "title": "Records & transactions",
+        "body": "Store and update structured data with guarantees you can trust — no half-finished writes, no surprises."
+      },
+      "search": {
+        "title": "Instant search",
+        "body": "Find anything across your data the moment it lands. Full-text search is always up to date."
+      },
+      "ai": {
+        "title": "AI & recommendations",
+        "body": "Search by meaning, power recommendations and ground AI assistants — without a separate vector database."
+      },
+      "history": {
+        "title": "Complete history",
+        "body": "Every change is kept in order, so you can audit, replay or rewind to any moment in time."
+      }
+    },
+    "baseLabel": "One source of truth",
+    "baseMeasure": "one permanent record · everything derives from it"
+  },
+  "pillars": {
+    "eyebrow": "Built for what matters",
+    "heading": "Fast. Sealed. Incorruptible.",
+    "lede": "Three promises we engineer for first — because for a system of record, they're the only ones that count.",
+    "items": {
+      "performance": {
+        "no": "01 / Performance",
+        "title": "Fast, and stays fast.",
+        "body": "TruthDB runs close to the metal on hardware you choose, handling hundreds of thousands of operations a second — and it doesn't bog down as your data grows.",
+        "stat": "↳ 180,000+ operations / second"
+      },
+      "security": {
+        "no": "02 / Security",
+        "title": "Sealed and self-contained.",
+        "body": "It ships as a hardened appliance that runs on your own infrastructure. Your data never leaves your control, and there's no sprawl of loosely-connected services to lock down.",
+        "stat": "↳ Runs entirely on your hardware"
+      },
+      "integrity": {
+        "no": "03 / Integrity",
+        "title": "Nothing slips through.",
+        "body": "Every record is checked the instant it's written and verified again every time it's read. Data can't be silently lost, corrupted or quietly changed underneath you.",
+        "stat": "↳ Verified end to end, on every read"
+      }
+    },
+    "underHood": "Under the hood, for the engineers",
+    "chips": [
+      "Single Rust binary",
+      "No external dependencies",
+      "Direct, sequential disk I/O",
+      "Deterministic replay",
+      "Checksummed end to end",
+      "Linux · bare metal"
+    ]
+  },
+  "install": {
+    "eyebrow": "Delivery",
+    "headingLine1": "Install once.",
+    "headingLine2": "It runs itself.",
+    "intro": "TruthDB arrives as a complete system — operating system included. There's nothing to assemble and no dependencies to chase.",
+    "steps": {
+      "boot": {
+        "no": "STEP 01",
+        "title": "Boot the installer",
+        "body": "Start from the TruthDB image on a fresh machine. It brings everything it needs."
+      },
+      "disks": {
+        "no": "STEP 02",
+        "title": "Choose your disks",
+        "body": "Point it at your storage and confirm. It handles the rest — safely, with a clear prompt before anything is touched."
+      },
+      "live": {
+        "no": "STEP 03",
+        "title": "You're live",
+        "body": "It reboots into a running system that starts itself and stays up. No babysitting required."
+      }
+    }
+  },
+  "closing": {
+    "eyebrow": "The system of record",
+    "heading": "One log. One truth.",
+    "lede": "One permanent record. Every job it does derives from it. Start running your own in minutes.",
+    "ctaDownload": "Download TruthDB",
+    "ctaContact": "Talk to us"
+  },
+  "footer": {
+    "tagline": "One log. One truth. The system of record for data you can't afford to lose.",
+    "productHeading": "Product",
+    "resourcesHeading": "Resources",
+    "companyHeading": "Company",
+    "links": {
+      "whatItIs": "What it is",
+      "capabilities": "Capabilities",
+      "whyDifferent": "Why it's different",
+      "install": "Install",
+      "documentation": "Documentation",
+      "architecture": "Architecture",
+      "changelog": "Changelog",
+      "github": "GitHub",
+      "about": "About",
+      "security": "Security",
+      "contact": "Contact"
+    },
+    "copyright": "© 2026 TruthDB · One log. One truth.",
+    "builtOn": "Built on Linux · Bare metal"
+  },
+  "comingSoon": {
+    "title": "TruthDB — Coming soon",
+    "headline": "Coming soon.",
+    "subtitle": "TruthDB isn't open to the public yet. If you have preview access, sign in to take a look.",
+    "previewLink": "Preview sign-in →"
+  },
+  "auth": {
+    "title": "Sign in",
+    "google": "Continue with Google",
+    "or": "or",
+    "email": "Email",
+    "password": "Password",
+    "signIn": "Sign in",
+    "close": "Close",
+    "unavailable": "Sign-in is not available right now.",
+    "errorGoogle": "Google sign-in failed. Please try again.",
+    "errorEmail": "Wrong email or password.",
+    "errorProviderDisabled": "Email sign-in isn't enabled for this project. Enable Email/Password in the Firebase console.",
+    "errorNoAccount": "No account found for this email.",
+    "errorTooMany": "Too many attempts. Please wait a moment and try again."
+  },
+  "cookies": {
+    "message": "We use Google Analytics to understand how visitors use this site.",
+    "accept": "Accept",
+    "reject": "Reject"
+  }
+}
