@@ -1,0 +1,193 @@
+{
+  "meta": {
+    "title": "TruthDB — Un registro. Una verdad.",
+    "description": "TruthDB es un único sistema que almacena, busca y protege tus datos más importantes — manteniendo un único registro permanente del que se deriva todo lo demás."
+  },
+  "nav": {
+    "whatItIs": "Qué es",
+    "capabilities": "Capacidades",
+    "whyDifferent": "Por qué es diferente",
+    "install": "Instalar",
+    "download": "Descargar"
+  },
+  "lang": {
+    "en": "English",
+    "da": "Dansk",
+    "fr": "Français",
+    "es": "Español"
+  },
+  "hero": {
+    "eyebrow": "El sistema de referencia",
+    "headlineLine1": "Un registro.",
+    "headlineLine2": "Una verdad.",
+    "ledePre": "TruthDB es un único sistema que almacena, busca y protege tus datos más importantes — manteniendo un único registro permanente del que se deriva todo lo demás. ",
+    "ledeEmphasis": "Si está en TruthDB, es verdad.",
+    "ctaDownload": "Descargar TruthDB",
+    "ctaHow": "Ver cómo funciona →",
+    "chip": "Listo para producción",
+    "measure": "Un solo sistema · cero dispersión de datos",
+    "specLabel": "Fig.01 — TruthDB",
+    "specVersion": "v1.0",
+    "annNewest": "registro más reciente",
+    "annHistory": "un historial ordenado",
+    "statSpeed": "Velocidad",
+    "statVerified": "Verificado",
+    "statDataLost": "Datos perdidos"
+  },
+  "oneSystem": {
+    "eyebrow": "Toda la pila, en uno",
+    "heading": "Sustituye cinco sistemas por uno.",
+    "lede": "La mayoría de los equipos ensamblan una base de datos, un motor de búsqueda, un motor de recomendaciones, un registro de actividad y una pista de auditoría. Cada uno es otra copia de tus datos que puede desviarse, romperse o discrepar. TruthDB hace todo eso desde una única fuente — tus datos viven en un solo lugar y siempre concuerdan consigo mismos.",
+    "todayLabel": "Hoy — cinco piezas móviles",
+    "boxes": {
+      "database": "Base de datos",
+      "search": "Motor de búsqueda",
+      "vector": "Almacén vectorial / IA",
+      "activity": "Registro de actividad",
+      "audit": "Pista de auditoría"
+    },
+    "copy": "copia {n}",
+    "beforeMeasure": "5 copias · 5 cosas que pueden romperse · desviación constante",
+    "consolidate": "consolidar",
+    "afterTitle": "Una única fuente de verdad.",
+    "afterBody": "Una sola copia de tus datos, haciendo cada tarea a la vez — siempre coherente, nada que mantener sincronizado.",
+    "afterMeasure": "1 sistema · 1 copia · siempre en concordancia"
+  },
+  "capabilities": {
+    "eyebrow": "Capacidades",
+    "headingLine1": "Cuatro tareas.",
+    "headingLine2": "Una base.",
+    "intro": "Cada capacidad es una porción vertical completa — integrada directamente en el núcleo, no añadida como ocurrencia tardía. Usa una, o úsalas juntas en una sola petición.",
+    "items": {
+      "records": {
+        "title": "Registros y transacciones",
+        "body": "Almacena y actualiza datos estructurados con garantías en las que puedes confiar — sin escrituras a medias, sin sorpresas."
+      },
+      "search": {
+        "title": "Búsqueda instantánea",
+        "body": "Encuentra cualquier cosa en tus datos en el momento en que llegan. La búsqueda de texto completo siempre está al día."
+      },
+      "ai": {
+        "title": "IA y recomendaciones",
+        "body": "Busca por significado, impulsa recomendaciones y fundamenta asistentes de IA — sin una base de datos vectorial aparte."
+      },
+      "history": {
+        "title": "Historial completo",
+        "body": "Cada cambio se conserva en orden, para que puedas auditar, reproducir o retroceder a cualquier momento en el tiempo."
+      }
+    },
+    "baseLabel": "Una única fuente de verdad",
+    "baseMeasure": "un registro permanente · todo se deriva de él"
+  },
+  "pillars": {
+    "eyebrow": "Construido para lo que importa",
+    "heading": "Rápido. Sellado. Incorruptible.",
+    "lede": "Tres promesas que diseñamos primero — porque para un sistema de referencia son las únicas que cuentan.",
+    "items": {
+      "performance": {
+        "no": "01 / Rendimiento",
+        "title": "Rápido, y se mantiene rápido.",
+        "body": "TruthDB se ejecuta cerca del metal en el hardware que elijas, gestionando cientos de miles de operaciones por segundo — y no se ralentiza a medida que crecen tus datos.",
+        "stat": "↳ Más de 180.000 operaciones / segundo"
+      },
+      "security": {
+        "no": "02 / Seguridad",
+        "title": "Sellado y autónomo.",
+        "body": "Se entrega como un dispositivo reforzado que se ejecuta en tu propia infraestructura. Tus datos nunca salen de tu control, y no hay una maraña de servicios débilmente conectados que proteger.",
+        "stat": "↳ Se ejecuta enteramente en tu hardware"
+      },
+      "integrity": {
+        "no": "03 / Integridad",
+        "title": "Nada se escapa.",
+        "body": "Cada registro se comprueba en el instante en que se escribe y se verifica de nuevo cada vez que se lee. Los datos no pueden perderse, corromperse ni alterarse en silencio a tus espaldas.",
+        "stat": "↳ Verificado de extremo a extremo, en cada lectura"
+      }
+    },
+    "underHood": "Bajo el capó, para los ingenieros",
+    "chips": [
+      "Un único binario de Rust",
+      "Sin dependencias externas",
+      "E/S de disco directa y secuencial",
+      "Reproducción determinista",
+      "Sumas de verificación de extremo a extremo",
+      "Linux · bare metal"
+    ]
+  },
+  "install": {
+    "eyebrow": "Entrega",
+    "headingLine1": "Instala una vez.",
+    "headingLine2": "Se ejecuta solo.",
+    "intro": "TruthDB llega como un sistema completo — sistema operativo incluido. No hay nada que ensamblar ni dependencias que perseguir.",
+    "steps": {
+      "boot": {
+        "no": "PASO 01",
+        "title": "Arranca el instalador",
+        "body": "Arranca desde la imagen de TruthDB en una máquina nueva. Trae todo lo que necesita."
+      },
+      "disks": {
+        "no": "PASO 02",
+        "title": "Elige tus discos",
+        "body": "Apúntalo a tu almacenamiento y confirma. Se encarga del resto — de forma segura, con un aviso claro antes de tocar nada."
+      },
+      "live": {
+        "no": "PASO 03",
+        "title": "Estás en marcha",
+        "body": "Se reinicia en un sistema en funcionamiento que se inicia solo y se mantiene activo. Sin necesidad de supervisión."
+      }
+    }
+  },
+  "closing": {
+    "eyebrow": "El sistema de referencia",
+    "heading": "Un registro. Una verdad.",
+    "lede": "Un registro permanente. Cada tarea que realiza se deriva de él. Empieza a ejecutar el tuyo en minutos.",
+    "ctaDownload": "Descargar TruthDB",
+    "ctaContact": "Habla con nosotros"
+  },
+  "footer": {
+    "tagline": "Un registro. Una verdad. El sistema de referencia para los datos que no puedes permitirte perder.",
+    "productHeading": "Producto",
+    "resourcesHeading": "Recursos",
+    "companyHeading": "Empresa",
+    "links": {
+      "whatItIs": "Qué es",
+      "capabilities": "Capacidades",
+      "whyDifferent": "Por qué es diferente",
+      "install": "Instalar",
+      "documentation": "Documentación",
+      "architecture": "Arquitectura",
+      "changelog": "Registro de cambios",
+      "github": "GitHub",
+      "about": "Acerca de",
+      "security": "Seguridad",
+      "contact": "Contacto"
+    },
+    "copyright": "© 2026 TruthDB · Un registro. Una verdad.",
+    "builtOn": "Construido sobre Linux · Bare metal"
+  },
+  "comingSoon": {
+    "title": "TruthDB — Próximamente",
+    "headline": "Próximamente.",
+    "subtitle": "TruthDB aún no está abierto al público. Si tienes acceso de vista previa, inicia sesión para echar un vistazo.",
+    "previewLink": "Inicio de sesión de vista previa →"
+  },
+  "auth": {
+    "title": "Iniciar sesión",
+    "google": "Continuar con Google",
+    "or": "o",
+    "email": "Correo electrónico",
+    "password": "Contraseña",
+    "signIn": "Iniciar sesión",
+    "close": "Cerrar",
+    "unavailable": "El inicio de sesión no está disponible en este momento.",
+    "errorGoogle": "El inicio de sesión con Google falló. Inténtalo de nuevo.",
+    "errorEmail": "Correo o contraseña incorrectos.",
+    "errorProviderDisabled": "El inicio de sesión por correo no está habilitado para este proyecto. Habilita Email/Password en la consola de Firebase.",
+    "errorNoAccount": "No se encontró ninguna cuenta para este correo.",
+    "errorTooMany": "Demasiados intentos. Espera un momento e inténtalo de nuevo."
+  },
+  "cookies": {
+    "message": "Usamos Google Analytics para entender cómo los visitantes utilizan este sitio.",
+    "accept": "Aceptar",
+    "reject": "Rechazar"
+  }
+}

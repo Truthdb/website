@@ -57,49 +57,75 @@ jobs:
           fi
 
   build:
-    name: Build
+    name: Build site
     needs: create-release
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
+      - uses: actions/setup-node@v4
         with:
           node-version: '20'
           cache: 'npm'
 
-      - name: Install dependencies
-        run: npm ci
+      - run: npm ci
 
-      - name: Build
-        run: npm run build
+      - run: npm run build
+        env:
+          VITE_APP_VERSION: ${{ needs.create-release.outputs.version }}
+          # GA4 measurement ID (G-XXXXXXXXXX). Not sensitive — it ships in the client
+          # bundle — so it lives as a repo Variable, not a Secret. Leave the variable
+          # unset to disable analytics (build no-ops). Consent-gated at runtime.
+          VITE_GA_MEASUREMENT_ID: ${{ vars.VITE_GA_MEASUREMENT_ID }}
+          # Pre-launch gate: defaults to gated. Set the repo variable VITE_LAUNCHED=true
+          # (and re-tag) to go fully public.
+          VITE_LAUNCHED: ${{ vars.VITE_LAUNCHED }}
+          VITE_PREVIEW_ALLOWLIST: ${{ secrets.VITE_PREVIEW_ALLOWLIST }}
+          # Firebase web config — stored as repo Secrets (kept out of the repo to avoid
+          # secret-scanner flags and match house convention). NOTE: a web API key still
+          # ships in the client bundle regardless, so also restrict it in GCP
+          # (HTTP-referrer allowlist) + Firebase Auth authorized domains.
+          VITE_FIREBASE_API_KEY: ${{ secrets.VITE_FIREBASE_API_KEY }}
+          VITE_FIREBASE_AUTH_DOMAIN: ${{ secrets.VITE_FIREBASE_AUTH_DOMAIN }}
+          VITE_FIREBASE_PROJECT_ID: ${{ secrets.VITE_FIREBASE_PROJECT_ID }}
+          VITE_FIREBASE_APP_ID: ${{ secrets.VITE_FIREBASE_APP_ID }}
+          VITE_FIREBASE_STORAGE_BUCKET: ${{ secrets.VITE_FIREBASE_STORAGE_BUCKET }}
+          VITE_FIREBASE_MESSAGING_SENDER_ID: ${{ secrets.VITE_FIREBASE_MESSAGING_SENDER_ID }}
 
-      - name: Package
+      - name: Package dist
         shell: bash
         run: |
           set -euo pipefail
-          mkdir -p dist-release
-          tar -czf "dist-release/website-v${{ needs.create-release.outputs.version }}.tar.gz" -C dist .
-          (cd dist-release && sha256sum "website-v${{ needs.create-release.outputs.version }}.tar.gz" > "website-v${{ needs.create-release.outputs.version }}.sha256")
+          VERSION="${{ needs.create-release.outputs.version }}"
+          BASE="truthdb-website-v${VERSION}-dist"
+          tar czf "${BASE}.tar.gz" -C dist .
+          sha256sum "${BASE}.tar.gz" > "${BASE}.sha256"
 
-      - name: Upload artifacts
+      - name: Upload release assets artifact
         uses: actions/upload-artifact@v4
         with:
           name: release-assets
-          path: dist-release/*
+          path: |
+            truthdb-website-v${{ needs.create-release.outputs.version }}-dist.tar.gz
+            truthdb-website-v${{ needs.create-release.outputs.version }}-dist.sha256
+          if-no-files-found: error
+
+      - name: Upload dist artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: dist
+          path: dist/
           if-no-files-found: error
 
   upload:
-    name: Upload
+    name: Upload assets to release
     needs: [create-release, build]
     runs-on: ubuntu-latest
     steps:
-      - name: Download artifacts
-        uses: actions/download-artifact@v4
+      - uses: actions/download-artifact@v4
         with:
           name: release-assets
-          path: dist-release
+          path: assets
 
       - name: Upload release assets
         env:
@@ -107,10 +133,29 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          shopt -s nullglob
-          files=(./dist-release/*)
-          if (( ${#files[@]} == 0 )); then
-            echo "No release assets found; skipping upload."
-            exit 0
-          fi
-          gh release upload "${{ needs.create-release.outputs.tag }}" "${files[@]}" --clobber --repo "$GITHUB_REPOSITORY"
+          gh release upload "${{ needs.create-release.outputs.tag }}" assets/* \
+            --clobber --repo "$GITHUB_REPOSITORY"
+
+  deploy:
+    name: Deploy to Firebase Hosting (live)
+    needs: [create-release, build]
+    runs-on: ubuntu-latest
+    concurrency:
+      group: deploy-prod
+      cancel-in-progress: false
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Download dist artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: dist
+          path: dist
+
+      - name: Deploy to live channel
+        uses: FirebaseExtended/action-hosting-deploy@v0
+        with:
+          repoToken: ${{ secrets.GITHUB_TOKEN }}
+          firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT }}
+          projectId: ${{ vars.FIREBASE_PROJECT_ID }}
+          channelId: live
