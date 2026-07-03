@@ -3,10 +3,8 @@ import { watchEffect } from 'vue'
 import { useI18n } from 'vue-i18n'
 
 import LogoMark from './LogoMark.vue'
-import { useUiStore } from '../stores/ui'
 
 const { t } = useI18n()
-const ui = useUiStore()
 
 watchEffect(() => {
   document.title = t('comingSoon.title')
@@ -20,9 +18,6 @@ watchEffect(() => {
       <div class="coming-soon-wordmark">Truth<b>DB</b></div>
       <h1 class="h1 balance">{{ $t('comingSoon.headline') }}</h1>
       <p class="coming-soon-sub pretty">{{ $t('comingSoon.subtitle') }}</p>
-      <button type="button" class="coming-soon-preview" @click="ui.openAuthModal()">
-        {{ $t('comingSoon.previewLink') }}
-      </button>
     </div>
   </main>
 </template>
@@ -64,20 +59,5 @@ watchEffect(() => {
   font-size: 16px;
   color: var(--gauge);
   line-height: 1.55;
-}
-.coming-soon-preview {
-  margin-top: 28px;
-  background: none;
-  border: 0;
-  cursor: pointer;
-  font-family: var(--mono);
-  font-size: 11.5px;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--dim);
-  transition: color 0.15s ease;
-}
-.coming-soon-preview:hover {
-  color: var(--signal-2);
 }
 </style>
