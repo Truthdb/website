@@ -167,8 +167,7 @@
   "comingSoon": {
     "title": "TruthDB — Kommer snart",
     "headline": "Kommer snart.",
-    "subtitle": "TruthDB er endnu ikke åben for offentligheden. Hvis du har preview-adgang, så log ind og tag et kig.",
-    "previewLink": "Preview-login →"
+    "subtitle": "TruthDB er endnu ikke åben for offentligheden."
   },
   "auth": {
     "title": "Log ind",

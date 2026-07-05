@@ -167,8 +167,7 @@
   "comingSoon": {
     "title": "TruthDB — Coming soon",
     "headline": "Coming soon.",
-    "subtitle": "TruthDB isn't open to the public yet. If you have preview access, sign in to take a look.",
-    "previewLink": "Preview sign-in →"
+    "subtitle": "TruthDB isn't open to the public yet."
   },
   "auth": {
     "title": "Sign in",

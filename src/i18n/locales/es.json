@@ -167,8 +167,7 @@
   "comingSoon": {
     "title": "TruthDB — Próximamente",
     "headline": "Próximamente.",
-    "subtitle": "TruthDB aún no está abierto al público. Si tienes acceso de vista previa, inicia sesión para echar un vistazo.",
-    "previewLink": "Inicio de sesión de vista previa →"
+    "subtitle": "TruthDB aún no está abierto al público."
   },
   "auth": {
     "title": "Iniciar sesión",
